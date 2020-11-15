@@ -7,7 +7,7 @@ class PollingBlockTracker extends BaseBlockTracker {
   constructor (opts = {}) {
     // parse + validate args
     if (!opts.provider) throw new Error('PollingBlockTracker - no provider specified.')
-    const pollingInterval = opts.pollingInterval || 60 * sec
+    const pollingInterval = opts.pollingInterval || 15 * sec
     const retryTimeout = opts.retryTimeout || pollingInterval / 10;
     const keepEventLoopActive = opts.keepEventLoopActive !== undefined ? opts.keepEventLoopActive : true;
     const setSkipCacheFlag = opts.setSkipCacheFlag || false;
